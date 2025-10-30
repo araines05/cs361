@@ -35,6 +35,7 @@ def get_mood_playlist(mood):
         "cooking": ["indie pop", "acoustic", "chill vibes", "feel good"],
         "cleaning": ["pop hits", "dance pop", "throwback", "happy tunes"],
         "running": ["fast tempo", "running mix", "edm", "upbeat"],
+        "studying": ["lofi hip hop", "ambient focus", "instrumental chill"],
         "gaming": ["gaming soundtrack", "trap beats", "synthwave", "cyberpunk"]
     }
 
@@ -60,7 +61,7 @@ stream.write("Select a mood or activity to generate a playlist:")
 
 mood = stream.selectbox("Choose a mood:", ["happy", "sad", "chill", "romantic", "angry", "motivated", "nostalgic", 
                                         "melancholy", "peaceful", "energetic", "workout", "study", "sleep", 
-                                        "driving", "party", "cooking", "cleaning", "running", "gaming"])
+                                        "driving", "party", "cooking", "cleaning", "running", "studying", "gaming"])
 
 if stream.button("Generate Playlist"):
     playlist = get_mood_playlist(mood)
