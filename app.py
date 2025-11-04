@@ -99,7 +99,7 @@ def generate_playlist(moods):
             idx = int(remove_choice) - 1
             if 0 <= idx < len(playlist):
                 track_to_remove = playlist[idx]
-                confirm = input(f"Are you sure you want to remove '{track_to_remove['name']}' by {track_to_remove['artist']}? (y/n): ").strip().lower()
+                confirm = input(f"Are you sure you want to remove '{track_to_remove['name']}' by {track_to_remove['artist']}? Removing a song with completely delete it from your playlist, you cannot undo this. (y/n): ").strip().lower()
                 if confirm == "y":
                     removed_track = playlist.pop(idx)
                     print(f"Removed: {removed_track['name']} by {removed_track['artist']}\n")
@@ -123,6 +123,7 @@ def generate_playlist(moods):
 
 def show_info(moods):
     print("\nThis app generates playlists based on moods or activities and saves them to a text file. You can also remove songs from your playlist before saving them.")
+    print("To get started, select 'Generate a playlist' from the main menu. Then, select a mood or activity to create your playlist!")
     print("Available moods/activities you can choose from:")
     for mood in moods:
         print(f"- {mood}")
